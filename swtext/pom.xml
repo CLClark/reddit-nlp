@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>swtext</groupId>
+  <artifactId>swtext</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+   <repositories>
+      <repository>
+      <id>jcenter</id>
+      <name>jCenter</name>
+      <url>https://jcenter.bintray.com</url>
+    </repository>
+     </repositories>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>starwars</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+	<artifactId>slf4j-simple</artifactId>
+	<version>1.7.7</version>
+    </dependency>
+    <dependency>
+    <groupId>org.apache.opennlp</groupId>
+    <artifactId>opennlp-tools</artifactId>
+    <version>1.8.4</version>
+</dependency>
+  	<dependency>
+  		<groupId>net.dean.jraw</groupId>
+  		<artifactId>JRAW</artifactId>
+  		<version>0.9.0</version>
+  		   <exclusions>
+        <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </exclusion>
+        <exclusion>
+        	<groupId>com.fasterxml.jackson.core</groupId>
+        	<artifactId>jackson-databind</artifactId>
+        </exclusion>
+  		   </exclusions>
+  	</dependency>
+
+   	<dependency>
+	  <groupId>org.mongojack</groupId>
+	  <artifactId>mongojack</artifactId>
+	  <version>2.8.0</version>
+	  <exclusions>
+	  	<exclusion>
+	  		<groupId>com.fasterxml.jackson.core</groupId>
+	  		<artifactId>jackson-databind</artifactId>
+	  	</exclusion>
+	  </exclusions>
+   	</dependency>
+	<dependency>
+	  <groupId>com.fasterxml.jackson.dataformat</groupId>
+	  <artifactId>jackson-dataformat-csv</artifactId>
+	  <version>2.9.0</version>	  		
+	</dependency>
+
+<!--
+	<dependency>
+	        <groupId>de.undercouch</groupId>
+	        <artifactId>bson4jackson</artifactId>
+	        <version>2.6.0</version>
+    	</dependency>
+ -->
+  </dependencies>
+</project>
